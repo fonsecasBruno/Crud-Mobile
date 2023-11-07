@@ -1,12 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import ListaPessoas from '../screens/list/ListaPessoas'
+import FormPessoas from '../screens/form/FormPessoas'
+
+const Stack = createStackNavigator()
 
 export default function Router() {
   return (
-    <View>
-      <Text>Router</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{ headerShow: false }}
+      initialRouteName='ListaPessoas'
+    >
+
+      <Stack.Screen name='ListaPessoas' component={ListaPessoas}/>
+      <Stack.Screen name='FormPessoas' component={FormPessoas}/>
+
+    </Stack.Navigator>
   )
 }
 
-const styles = StyleSheet.create({})
